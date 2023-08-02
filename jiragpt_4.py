@@ -6,7 +6,7 @@ from jira import JIRA
 # Replace the following variables with your Jira credentials and server URL
 JIRA_SERVER = 'https://cadastra.atlassian.net/'
 JIRA_USERNAME = 'rcantini@cadastra.com'
-API_TOKEN_FILE = 'jirapy/jira_api_token.txt'
+API_TOKEN_FILE = r'jirapay\jira_api_token.txt'
 
 # Read the API token from the file
 with open(API_TOKEN_FILE, 'r', encoding="utf-8") as file:
@@ -58,8 +58,8 @@ for idx, issue in enumerate(issues, start=1):
             time_spent = worklog.timeSpentSeconds or 0
             print(
                 f"{idx}. Issue Key: {issue.key}, Time Spent: \
-                    {time_spent // 3600}h {time_spent % 3600 // 60}m")
+ {time_spent // 3600}h {time_spent % 3600 // 60}m")
 
 print(
     f"\nTotal Time Worked in the Day: \
-    {total_hours} hours and {total_minutes} minutes")
+{total_hours} hours and {total_minutes} minutes")
