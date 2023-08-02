@@ -3,7 +3,7 @@
 import requests
 
 
-with open("jirapay\jira_api_token.txt", "r", encoding="utf-8") as f:
+with open("jirapy/jira_api_token.txt", "r", encoding="utf-8") as f:
     API_TOKEN = f.read().strip()
 
 
