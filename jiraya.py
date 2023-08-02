@@ -1,15 +1,15 @@
 """Script to get the work log for the day."""
-import datetime
+# import datetime
 import requests
 
 
-with open("jira_api_token.txt", "r", encoding="utf-8") as f:
+with open("jirapay\jira_api_token.txt", "r", encoding="utf-8") as f:
     API_TOKEN = f.read().strip()
 
 
 def get_worklogs_for_today():
     """Gets all worklogs for the current user for today."""
-    url = "https://cadastra.atlassian.net/jira/your-work/rest/api/3/worklog"
+    url = "https://cadastra.atlassian.net/jira/rest/api/3/worklog"
     payload = {
         "jql": "worklogDate > 'today' AND author = currentUser()",
         "startAt": 0,
@@ -28,7 +28,7 @@ def get_worklogs_for_today():
 
 def summarize_hours_worked():
     """Summarizes the hours worked in the day at the time of the execution."""
-    today = datetime.datetime.today()
+    # today = datetime.datetime.today()
     worklogs = get_worklogs_for_today()
     total_hours = 0
     for worklog in worklogs:
